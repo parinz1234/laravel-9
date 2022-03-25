@@ -3,27 +3,13 @@
 namespace App\Http\Controllers\api;
 
 use App\Http\Controllers\Controller;
+use DB;
 
 class BookController extends Controller
 {
     public function get_booking()
     {
-        $bookings = [
-            [
-                'id' => 1,
-                'name' => 'Booking 1',
-                'description' => 'Description 1',
-                'created_at' => '2020-01-01 00:00:00',
-                'updated_at' => '2020-01-01 00:00:00',
-            ],
-            [
-                'id' => 2,
-                'name' => 'Booking 2',
-                'description' => 'Description 2',
-                'created_at' => '2020-01-01 00:00:00',
-                'updated_at' => '2020-01-01 00:00:00',
-            ],
-        ];
+        $bookings = DB::table('books')->get();
         return response()->json([
             'bookings' => json_encode($bookings),
         ], 200);
