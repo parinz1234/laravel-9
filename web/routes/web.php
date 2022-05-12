@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,3 +15,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+Route::get('/cookie', 'CookieController@get_cookie')->name('get_cookie');
+
+Route::get('/laravel-cookie', 'CookieController@get_laravel_cookie')->name('get_laravel_cookie');
