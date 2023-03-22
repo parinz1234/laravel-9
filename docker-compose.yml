@@ -20,3 +20,9 @@ services:
     volumes:
         - "./web:/app"
     command: install
+  npm:
+    image: node:16.14.2-alpine3.15
+    working_dir: /var/www/html
+    volumes:
+      - ./web:/var/www/html
+    entrypoint: ['npm']
