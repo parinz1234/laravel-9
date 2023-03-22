@@ -1,5 +1,6 @@
 web/node_modules
 web/public/hot
+web/public/js
 web/public/storage
 web/storage/*.key
 web/vendor
